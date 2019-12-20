@@ -1,0 +1,9 @@
+# Tank Buddy Deployment Configuration File #
+############################################
+---
+deployment:
+  tasks:
+   - export DEPLOYPATH=~/public_html/tankbuddy-prod/
+   - /bin/mkdir ~/tankbuddy_deployment_archive/$(date +"%F_%I:%M:%S%p")
+   - /bin/mv $DEPLOYPATH[^.]* ~/tankbuddy_deployment_archive/$(date +"%F_%I:%M:%S%p")
+   - /bin/cp -R [^.]* $DEPLOYPATH
