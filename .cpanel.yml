@@ -1,7 +1,8 @@
 ---
 deployment:
   tasks:
-   - export DEPLOYPATH=~/public_html/tankbuddy-prod
-   - /bin/mkdir ~/tankbuddy_deployment_archive/$(date +"%F_%I:%M:%S%p")
-   - /bin/mv $DEPLOYPATH/[^.]* ~/tankbuddy_deployment_archive/$(date +"%F_%I:%M:%S%p")
+   - export DEPLOYPATH=~/public_html/tankbuddy-prod/
+   - export ARCHIVEDIRECTORYPATH=~/tankbuddy_deployment_archive/$(date +"%F_%I:%M:%S%p")/
+   - /bin/mkdir -p $ARCHIVEDIRECTORYPATH
+   - /bin/mv -f $DEPLOYPATH[^.]* $ARCHIVEDIRECTORYPATH
    - /bin/cp -R [^.]* $DEPLOYPATH
