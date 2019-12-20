@@ -13,7 +13,7 @@ RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/[0-9a-zA-Z_-]+$
 RewriteCond %{REQUEST_URI} !^/\.well-known/cpanel-dcv/[0-9a-zA-Z_-]+$
 RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/(?:\ Ballot169)?
 RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
-#RewriteRule ^/?(.*) http%2://tankbuddy\.org/$1 [L,R=301,NE]
+RewriteRule ^/?(.*) http%2://tankbuddy\.org/$1 [L,R=301,NE]
 
 Options 
 RewriteEngine on
@@ -41,3 +41,7 @@ RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ 
 RewriteRule ^(.*)$ /w_api/Handler.php
 
 #Weebly Additions End
+AuthType Basic
+AuthName "Tank Buddy DEV"
+AuthUserFile "/home1/tankbudd/.htpasswds/public_html/tankbuddy-dev/passwd"
+require valid-user
