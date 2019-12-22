@@ -6,5 +6,5 @@ deployment:
    - /bin/mkdir -p $ARCHIVEDIRECTORYPATH
    - /bin/mv -f $DEPLOYPATH[^.]* $ARCHIVEDIRECTORYPATH
    - /bin/cp -R [^.]* $DEPLOYPATH
-   - /usr/bin/git checkout master
-   - /usr/bin/git push backup master
+   - /usr/local/cpanel/3rdparty/bin/git checkout master
+   - /usr/local/cpanel/3rdparty/bin/ push backup master
