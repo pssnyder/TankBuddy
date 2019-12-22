@@ -6,3 +6,4 @@ deployment:
    - /bin/mkdir -p $ARCHIVEDIRECTORYPATH
    - /bin/mv -f $DEPLOYPATH[^.]* $ARCHIVEDIRECTORYPATH
    - /bin/cp -R [^.]* $DEPLOYPATH
+   - /bin/git push backup master
